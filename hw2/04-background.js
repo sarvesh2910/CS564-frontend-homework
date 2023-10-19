@@ -12,7 +12,7 @@ const updateColor = () => {
 };
 
 const start = (intervalInput) => {
-  setInterval(() => updateColor(), intervalInput * 1000);
+  return setInterval(() => updateColor(), intervalInput * 1000);
 };
 
 const stop = (intervalId) => {
