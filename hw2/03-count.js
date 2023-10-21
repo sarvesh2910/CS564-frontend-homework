@@ -1,5 +1,4 @@
 // // Add your code here
-const inputWord = document.querySelector("#inputWord");
 
 inputWord.addEventListener("keyup", () => {
   const inputWord = document.getElementById("inputWord").value;
