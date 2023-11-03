@@ -86,12 +86,12 @@ function Houses() {
     ],
   };
   return (
-    <div>
+    <section className={'houses'}>
       <h1>Houses of GOT</h1>
       <div className='chart'>
         <Doughnut data={chartData} />
       </div>
-    </div>
+    </section>
   );
 }
 

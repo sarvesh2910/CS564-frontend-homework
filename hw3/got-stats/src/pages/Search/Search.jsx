@@ -40,7 +40,7 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <section className={'search'}>
       <h1>Search for Characters</h1>
       <div>
         <form
@@ -65,7 +65,7 @@ const Search = () => {
         </form>
       </div>
       {showResultToggle && searchResult.length ? (
-        <div>
+        <div className={'characterCard'}>
           <img
             src={searchResult[0].imageUrl}
             alt={searchResult[0].fullName}
@@ -81,7 +81,7 @@ const Search = () => {
           </div>
         )
       )}
-    </div>
+    </section>
   );
 };
 

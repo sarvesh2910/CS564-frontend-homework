@@ -2,9 +2,9 @@ import React from 'react';
 
 function Home() {
   return (
-    <div>
+    <section className={'home'}>
       <h1>Hello, Welcome to thrones api!</h1>
-    </div>
+    </section>
   );
 }
 
