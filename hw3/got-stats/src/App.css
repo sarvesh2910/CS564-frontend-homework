@@ -32,6 +32,10 @@ a{
 }
 
 .characterCard{
+  padding: 10px;
   margin: 10px;
   border: 1px solid grey;
+  border-radius: 4px;
+  text-align: center;
 }
+

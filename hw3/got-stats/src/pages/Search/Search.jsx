@@ -53,6 +53,7 @@ const Search = () => {
           <input
             type='text'
             id='search'
+            minLength={3}
             placeholder='Search'
             value={searchString}
             onChange={(e) => {

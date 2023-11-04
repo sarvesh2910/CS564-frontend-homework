@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
@@ -48,29 +48,24 @@ const sanitizedFamilyNames = {
 };
 
 function Houses() {
-  const [houseCounts, setHouseCounts] = useState([]);
+  const [houseCounts, setHouseCounts] = useState({});
   const sanitizeFamilyName = (family) => sanitizedFamilyNames[family] || family;
-  const sanitizeData = (data) => {
-    const houseCounts = {};
-    data.forEach((character) => {
-      const family = sanitizeFamilyName(character.family);
-      houseCounts[family] = (houseCounts[family] || 0) + 1;
-    });
-    return houseCounts;
-  };
 
   useEffect(() => {
-    const fetchApiData = async () => {
+    ( async () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        const cleanedData = sanitizeData(data);
-        setHouseCounts(cleanedData);
+        const tempHouseCount = {};
+        data.forEach((character) => {
+            const family = sanitizeFamilyName(character.family);
+            tempHouseCount[family] = (tempHouseCount[family] || 0) + 1;
+          });
+        setHouseCounts(tempHouseCount);
       } catch (error) {
         console.error('An error occurred:', error);
       }
-    };
-    fetchApiData();
+    })()
   }, []);
 
   const chartData = {
