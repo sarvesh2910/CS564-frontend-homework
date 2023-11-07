@@ -8,7 +8,7 @@ const createCharacterCard = (character) => {
 
     const image = document.createElement('img');
     image.src = character.imageUrl;
-    image.alt = `${character.fullName}`;
+    image.alt = `Picture of ${character.fullName}`;
     image.classList.add('characterImage');
     card.appendChild(image);
 

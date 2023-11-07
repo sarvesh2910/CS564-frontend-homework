@@ -69,7 +69,7 @@ const Search = () => {
         <div className={'characterCard'}>
           <img
             src={searchResult[0].imageUrl}
-            alt={searchResult[0].fullName}
+            alt={`Returned an image of ${searchResult[0].fullName}`}
             height={220}
             width={200}
           />
